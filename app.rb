@@ -14,7 +14,11 @@ class App < Sinatra::Base
   end
 
   get '/say/:number/:phrase' do
-    erb :reversename
+    @x = 0
+    while @x != params[:number]
+      "#{phrase}"
+      @x = @x + 1
+    end
   end
 
   get '/say/:word1/:word2/:word3/:word4/:word5' do
