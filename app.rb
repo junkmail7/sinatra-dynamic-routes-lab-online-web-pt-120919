@@ -16,7 +16,7 @@ class App < Sinatra::Base
   get '/say/:number/:phrase' do
     @x = 0
     while @x != params[:number]
-      "#{phrase}"
+      "#{params[:phrase]}"
       @x = @x + 1
     end
   end
