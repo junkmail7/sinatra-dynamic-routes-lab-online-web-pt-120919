@@ -8,7 +8,9 @@ class App < Sinatra::Base
   end
 
   get '/square/:number' do
-    erb :reversename
+    @answer = params[:number].to_i
+    @answer = @answer * @answer
+    "#{@answer}"
   end
 
   get '/say/:number/:phrase' do
