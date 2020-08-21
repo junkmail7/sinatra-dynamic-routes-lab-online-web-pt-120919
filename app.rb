@@ -23,7 +23,16 @@ class App < Sinatra::Base
   end
 
   get '/:operation/:number1/:number2' do
-    erb :reversename
+    if params[:operation] = "add"
+      @answer = params[:number1] + params[:number2]
+    elsif params[:operation] = "subtract"
+      @answer = params[:number1] - params[:number2]
+    elsif params[:operation] = "multiply"
+      @answer = params[:number1] * params[:number2]
+    elsif params[:operation] = "divide"
+      @answer = params[:number1] / params[:number2]
+    end
+    "#{@answer}"
   end
 
 end
